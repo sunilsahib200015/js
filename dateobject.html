@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=/, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.mystyle
+{
+color:blueviolet;
+font-size:50px;
+font-family:arial black;
+background:black;
+width:23%;
+padding:40px;
+margin:auto;
+cursor:pointer;
+box-shadow:10px 10px  10px gray;
+}
+
+
+</style>
+
+
+<body>
+    <h1>Working with Date Object in javaScript</h1>
+    <div id="box">clock</div>
+    <script>
+        /*
+       # browser is made by some classes(object) :- known as DOM (document.object)
+       # some object are visual    example  Document,button,....
+       # some of then are none viusal   example :-Date,Math,String....
+       # instance of some object is not created, we have to create
+       */
+// Creating Date Class object
+  var d = new Date()
+  //alert(d)
+  //alert(d.toLocaleTimeString())
+  //alert(d.toLocaleDateString())
+
+// Finding the box div
+
+var a = document.getElementById("box")
+
+//a.style.color="red"
+//a.style="color:red;font-size:50px;"
+// Applying Class by JavaScript
+
+a.classList.add("mystyle")
+
+
+// Creating Timer Object in JavaScript
+
+function show_clock()
+{
+ d = new Date()
+a.innerHTML= d.toLocaleTimeString()
+document.title = d.toLocaleTimeString()
+}
+
+// SetInterval
+t = setInterval("show_clock()",1000)
+a.title = "Click to stop/double Click to start"
+
+a.onclick = function()
+{
+    clearInterval(t)
+
+}
+a.ondblclick = function()
+{
+t = setInterval("show_clock()",1000)
+
+}
+
+
+
+    </script>
+
+</body>
+</html>

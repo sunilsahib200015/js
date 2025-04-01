@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>Web animation </title> 
+
+</head>
+<style>
+body{
+overflow:hidden;
+}
+
+@keyframes changepic
+{
+background:red;
+}
+
+#banner1
+{
+width:500%;
+background:ed;
+}
+@keyframes runbanner
+{
+10%{left:0%;}
+20%{left:-19.94%;}
+30%{left:-19.94%;}
+40%{left:-39.88%;}
+50%{left:-39.88%;}
+60%{left:-59.82%;}
+70%{left:-59.82%;}
+80%{left:-79.76%;}
+90%{left:-79.76%;}
+
+
+
+}
+
+.picstyle
+{
+width:19.83%;
+height:600px;
+position:relative;
+top:0px;
+left:0px;
+margin:5px;
+//box-shadow:10px 10px 10px gray;
+animation:runbanner 28s infinite alternate;
+}
+
+
+</style>
+<body>
+	<h1>Welcome Mayur in Arean </h1>
+	<input id="mycolor" type="color">
+
+	<script>
+     //var m = prompt("Enter Color To Set ...","cyan")
+     var d = document.getElementById("mycolor")
+
+     d.onchange = function()
+	 {
+	 document.body.style.background=this.value
+	 }
+
+	 </script>
+	<!--
+<div id="banner1">
+<img src="images/p6.jpg" class="picstyle">
+<img src="images/p2.jpg" class="picstyle">
+<img src="images/p3.jpg" class="picstyle">
+<img src="images/p4.jpg" class="picstyle">
+<img src="images/p5.jpg" class="picstyle">
+</div>
+-->
+
+</body>
+
+</html>

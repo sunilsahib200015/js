@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.mystyle{
+    transition:0.50s ease-in-out;
+    cursor:pointer;
+    width:70%;
+        padding:20px;
+    margin:auto;
+    text-align:center;
+    background:black;
+    color:blueviolet;font-size:50px;font-family:Arial black;}
+</style>    
+<body>
+ <div id="box">Clock</div>
+ 
+ <script>
+  /*  Creating instance of Date Class */
+    var d 
+    var c = document.getElementById("box")
+    c.title = "Click to stop"
+    
+   // alert(d.toLocaleTimeString())
+   
+   
+    //c.style="color:red"
+   //c.style.color = "green"
+   c.classList.add("mystyle")
+
+
+   function show_clock()
+   {
+    document.title = new Date().toLocaleTimeString()
+    d = new Date()
+    c.innerHTML = d.toLocaleTimeString()
+    }
+
+
+    // Creating Timer in javaScript
+
+var t = setInterval("show_clock()",1000)
+c.onclick= function()
+{
+clearInterval(t)
+}
+
+c.ondblclick= function()
+{
+   t = setInterval("show_clock()",1000)
+   alert("Clock is on now")
+}
+
+c.onwheel = function(event)
+{
+    //alert(event.deltaY)
+     if(event.deltaY == 102)
+        {
+          c.style.transform="scale(2)"
+        }
+
+        if(event.deltaY == -102)
+        {
+            c.style.transform="scale(1)"
+        }
+     
+}
+
+
+
+    </script>
+    
+</body>
+</html>

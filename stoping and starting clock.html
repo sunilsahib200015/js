@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div id="clock" style="box-shadow:10px 10px 10px gray;text-align:center;width:50%;background:yellow;font-family:arial black;color:red;font-size:50px;margin:auto;">Clock </div> 
+ <div style="text-align:center;">
+    <br/>
+ <button onclick="start()">Start Clock</button>   <button onclick="stop()">stop</button> 
+ </div>
+<script>
+  var t = document.getElementById("clock")
+// Using Timer Object setInterval(),setTimeout()
+
+
+function showtime()
+{
+  var d = new Date()
+  t.innerHTML=d.toLocaleTimeString()
+  
+}
+var i
+  function start()
+  {
+        i = setInterval("showtime()",1000)
+  }
+  function stop()
+  {
+    clearInterval(i)
+
+  }
+
+</script>
+
+    
+</body>
+</html>

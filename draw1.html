@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="mycan"></canvas>
+<script>
+var can = document.getElementById("mycan")
+var c = can.getContext("2d")
+can.width = window.innerWidth
+can.height = window.innerHeight
+can.style.border='2px black dotted'
+var bsize = 20
+var drawmode = true
+
+var drawcolor ="red"
+
+
+function f1(e)
+{
+c.beginPath();
+c.arc(e.pageX, e.pageY, bsize , 0, 2 * Math.PI);
+
+var r =  Math.round(Math.random()*255)
+var g =  Math.round(Math.random()*255)
+var b =  Math.round(Math.random()*255)
+
+drawcolor ="rgb("+r+","+g+","+b+")"
+if(drawmode)
+{
+c.fillStyle = drawcolor
+
+}
+else{
+    c.fillStyle ="white"
+   c.stroke =""
+
+}
+
+c.fill()
+c.stroke();
+
+
+  //document.title = "x = "+e.clientX+" Y = "+e.clientY
+
+}
+
+function f2(e)
+{
+    if((e.keyCode == 38)&&(bsize<150))
+        {
+            bsize++
+            document.title = bsize 
+        }
+        if((e.keyCode == 40)&&(bsize>6))
+        {
+            bsize--
+            document.title = bsize
+        }
+
+        if(e.keyCode == 69)
+        {
+            
+            drawmode = !drawmode
+
+
+            document.title = drawmode
+        }
+
+
+
+   // document.title = e.keyCode 
+}
+
+
+
+
+document.addEventListener("mousemove",f1)
+document.addEventListener("keydown",f2)
+
+
+
+
+document.title="Every thing is ok"
+</script>
+
+
+    
+</body>
+</html>

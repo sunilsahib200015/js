@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head><title>Practice Page</title>
+
+<h1 style="margin:auto;text-align:center;padding:20px;color:white;display:block;width:50%;background:teal">My Practice Pages </h1>
+</head>
+<style>
+#box
+{
+width:200px;
+height:200px;
+border:0px black solid;
+overflow:scroll;
+}
+.pic
+{
+width:200px;
+height:205px;
+margin-top:-5px;
+
+}
+
+</style>
+
+<body>
+<br/>
+<div id="box">
+<img class="pic" src="images/p1.jpg">
+<img class="pic" src="images/p2.jpg">
+<img class="pic" src="images/p3.jpg">
+<img class="pic" src="images/p4.jpg">
+<img class="pic" src="images/p5.jpg">
+<img class="pic" src="images/p6.jpg">
+</div>
+
+
+<script>
+
+var c = 0
+
+var d  = document.getElementById("box")
+
+var s = d.scrollHeight
+//alert(s)
+
+function myscroll1()
+{
+
+if(c <= s )
+{
+c+=205
+}
+
+d.scrollTo({
+                top:c,
+                behavior:'smooth'
+	   });
+
+     
+
+document.title=c
+}
+
+
+
+
+function myscroll2()
+{
+
+
+if(c>0)
+	{
+	c-=207
+	}
+d.scrollTo({
+                top: c,
+                behavior: 'smooth'
+            });
+            
+document.title=c
+}
+
+
+
+
+function mtop()
+{
+
+d.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+document.title=c
+}
+
+
+
+
+
+var c2 ;
+function bottom()
+{
+
+c2 = d.scrollHeight
+d.scrollTo({
+                top: c2,
+                behavior: 'smooth'
+            });
+            
+document.title=c
+}
+
+
+</script>
+
+
+
+
+<button onclick="myscroll1()">Scollup</button>
+<button onclick="myscroll2()">Scolldowm</button>
+
+<button onclick="mtop()">Go to top</button>
+
+<button onclick="bottom()">Goto End</button>
+
+</body>
+</html>
+

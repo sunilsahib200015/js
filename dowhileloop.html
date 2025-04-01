@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Today News </h1>
+
+    <div id="nb" style="color:red;font-size:15px;font-family:arial black;text-transform:uppercase;width:100%;">News</div>
+<ol>
+    <script>
+/*
+Post Tested Loop
+*/
+
+// Array
+// Index Array
+
+
+var news = ["A True Farmers Scientist: Full Text Of PM Modi's Blog On MS Swaminathan ",",There's Much India Has To Share: Full Text Of S Jaishankar's Speech At UN ","Yashasvi Jaiswal Learnt From His Upbringing, Not You England Great Blasts Star Player ","Meta Releases SeamlessM4T AI Model to Translate Languages in Real-Time","Though I'm Continuing As NCP Chief...,: Full Text Of Sharad Pawar's Speech ","Rahul Gandhi No Longer A Lok Sabha MP: Full Text Of Disqualification Notice ","Rishi Sunak's First Speech As UK PM: Full Text "]
+
+
+var a = 0
+var n = document.getElementById("nb")
+var m =" "
+var r,g,b
+do  
+      {
+        
+        r = Math.round(Math.random()*255)
+        g = Math.round(Math.random()*255)
+        b = Math.round(Math.random()*255)
+
+        m+= news[a]+"<hr/><br/>"
+        n.style.background="rgb("+r+","+g+","+b+")"
+        a++
+
+      }while(a<news.length)
+      n.innerHTML = m
+    </script>
+    </ol>
+</body>
+</html>

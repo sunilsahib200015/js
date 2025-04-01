@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var  clist = new  Array()
+        
+       //document.body.style.background  = mycolor
+
+        //alert(mycolor)
+    var d =  document.createElement("div")
+    d.style="transition:0.50s;width:200px;height:200px;position:absolute;top:10px;left:20px;background:white;border:1px solid black;border-radius:20px;box-shadow:10px 10px 10px gray;overflow:scroll;padding:20px;"
+   document.body.appendChild(d)
+   d.innerHTML="<div><button onClick='closedilog()' style='display:block;text-align:right;border-radius:100px'>X</button></div>"
+
+/*  'document.body.removeChild(d)' */
+
+    var r,g,b
+     var a = 1
+     var c = 1
+      while(a<=100)
+      {
+      
+        r = Math.round(Math.random()*255)
+        g = Math.round(Math.random()*255)
+        b = Math.round(Math.random()*255)
+       var mycolor = "rgb("+r+","+g+","+b+")"
+       clist[a]=mycolor
+        d.innerHTML+="<button onClick='document.body.style.background = this.style.backgroundColor' style='box-shadow:50px 5px grayl;background-color:"+mycolor+";cursor:pointer;margin:5px;border-radius:100px'>&nbsp;&nbsp;</button>"
+       a++
+      }
+
+  function closedilog()
+  {
+    
+    //d.style.transform="scale(0) rotate(360deg)"
+    //d.style.opacity="0"
+    //d.style.top="700px"
+    d.style.left="700px"
+    //d.style.top="300px"
+    //d.style.opacity="0.10"
+    //d.style.background="rgba(22,33,44,0.23)"
+    d.style.backgroundSize="cover"
+    d.style.backgroundImage="url(images/thanks.gif)"
+
+    
+    setTimeout("document.body.removeChild(d);document.title='removed' ",4000);
+
+    
+  }
+
+    </script>
+    
+</body>
+</html>

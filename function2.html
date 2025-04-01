@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onLoad="redirect()">
+    <script>
+
+function redirect()
+{
+//alert("Welcome to My web...We are updating the web site....")
+//location.href="http://yahoo.com"
+
+}
+
+
+    var d = document.createElement("img")
+    document.body.appendChild(d)
+    d.style="width:30%;margin:50px;"
+    d.src="images/p1.jpg"
+   
+    d.onclick = function()
+    {
+        //alert(this.src)
+        d.style.transition="0.5s"
+        d.style.boxShadow="10px 10px 10px gray"
+        d.style.transform ="scale(2)"
+        //alert(location.href)
+       location.href="p1.html"
+       // location.href="http://yahoo.com"
+        
+    }
+    d.onmouseover = function()
+    {
+        d.title = "Click To Zoom"
+        //d.style.cursor="zoom-in"
+        d.style.cursor="url(images/lens.png),auto"
+
+        d.style.transform ="scale(1)"
+
+    }
+
+    d.onmouseout = function()
+    {
+        
+        d.style.transform ="scale(1)"
+
+    }
+
+    </script>
+    
+</body>
+</html>

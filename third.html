@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mes"><h1>Time</h1></div>
+    <script>
+/*  Data Type */
+// expression 
+/* Data Type 
+var a = 10 (Number)
+var uname="Ravi" (String)
+var married = true (Boolean)
+*/
+
+var t = new Date()
+ 
+    var d = document.getElementById("mes")  
+     //alert(d.innerHTML)
+     d.style="width:400px;height:auto;background:teal;color:white;padding:20px; text-align:center;"
+
+    // d.innerHTML= new  Date().toLocaleString()
+     d.innerHTML= new  Date().toLocaleTimeString()
+
+
+    </script>
+    
+</body>
+</html>

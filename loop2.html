@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.pic
+{
+  box-sizing: border-box;  
+  cursor:pointer;  Margin:20px;width:20%;padding:40px;box-shadow:10px 10px 10px gray;
+}
+.pic:hover{
+transition:2s;
+width:21%;
+border:12px red ridge;
+
+}
+
+</style>
+
+
+<body>
+    <h1>For Loop</h1>
+    <script>
+        var p="images/p1.jpg"
+    for(var i = 1;i<=7;i++)
+       {
+        p="images/p"+i+".jpg"
+        
+         document.write("<img class='pic' src='"+p+"'>")
+     
+       }
+  
+
+    </script>
+
+</body>
+
+</html>

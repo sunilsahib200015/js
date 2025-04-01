@@ -1,0 +1,62 @@
+<!doctype html>
+  
+<html>
+
+<meta content="width=device-width,initial-scale=1.0" >
+
+<head>
+<title>Photo Gallery</title></head>
+
+<style>
+#box
+{
+width:500px;
+height:400px;
+background:black;
+margin:auto;
+text-align:center;
+perspective:2000px;
+}
+
+.picstyle
+{
+
+width:200px;
+height:200px;
+cursor:pointer;
+transition:2s;
+
+}
+
+</style >
+
+
+<body>
+
+<div id="box">
+<p><a href="function2.html">Close</a></p>
+<img id="mypic" class="picstyle " src="images/p1.jpg">
+</div>
+<script>
+    var d = document.getElementById("mypic")
+    var r = 10 ;
+    function sh()
+    {
+       
+       rr =  Math.round(Math.random()*4)
+       r+=10
+        d.style.transform ="rotateX("+r+"deg) rotateY("+r+"deg) rotateZ("+r+"deg)"
+       
+        document.title = r
+    }   
+
+ setInterval("sh()",100)
+
+
+</script>
+
+
+</body>
+
+
+</html>
