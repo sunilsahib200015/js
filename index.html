@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .banner-container {
+    //position: relative;
+    width: 500px;
+    height: 300px;
+    margin:auto;
+    //overflow: hidden;
 
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+span{
+box-shadow:5px 5px 5px black;
+border:2px rgb(9, 66, 96) solid;
+padding:2px;
+cursor:pointer;
+
+
+}
+
+</style>
+<body>
+
+    <div class="banner-container">
+        <img id="banner" src="images/p4.jpg" alt="Banner Image">
+        <span style="position:relative;top:-150px;left:10px;"onclick="prevImage()">⬅️</span>
+        <span  style="position:relative;top:-150px;left:85%;" onclick="nextImage()">➡️</span>
+    </div>
+
+    <script>
+
+const images = ["images/p6.jpg","images/p5.jpg","images/p4.jpg","images/p1.jpg", "images/p2.jpg", "images/p3.jpg"];
+let currentIndex = 0;
+
+function showImage(index) {
+    const banner = document.getElementById("banner");
+    banner.style.opacity = 0;
+     
+    setTimeout(() => {
+        banner.src = images[index];
+        banner.style.opacity = 1;
+        
+    }, 500);
+}
+
+function nextImage() {
+    
+    if(currentIndex<images.length-1)
+        {
+            currentIndex++
+        }
+        else
+        {
+            currentIndex = 0
+        }
+    document.title = currentIndex
+    showImage(currentIndex);
+
+}
+
+function prevImage() {
+    
+    
+    if(currentIndex>0)
+        {
+            currentIndex--
+        }
+        else
+        {
+            currentIndex = images.length-1
+        }
+    
+    showImage(currentIndex);
+    document.title = currentIndex
+    
+}
+
+    </script>
+    
+</body>
+</html>
