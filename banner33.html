@@ -1,1 +1,74 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+  #container
+  {
+    width:70%;
+    height:500px;
+    box-shadow:10px 10px 10px gray;
+    margin:auto;
+  }
+
+#pic
+{
+  width:100%;
+  height:100%;
+  transition:2s;
+}
+.ani
+{
+  opacity:1;
+   transition:2s linear;
+  }
+</style>
+<body>
+    
+  <div id="container">
+       <img id="pic" src="images/flower3.jpg" >
+  </div>
+
+    <script>
+var a = 0;
+var d = document.getElementById("pic")
+
+     
+
+function sk()
+{
+  d.style.opacity = "0"
+
+  if(a<=10)
+        {
+        a++
+        }
+        else
+        {
+            a=1
+        }
+       
+        
+        
+        
+
+
+    setTimeout( "d.src=`images/flower${a}.jpg`;d.style.opacity='1' ",1000)
+   
+
+
+
+       
+ document.title = a  
+}
+setInterval("sk()",6000)
+
+  </script>
+    
+</body>
+</html>
