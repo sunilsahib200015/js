@@ -1,1 +1,34 @@
+name: Generate Sitemap
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate sitemap
+        run: |
+          apt-get update && apt-get install -y python3
+          echo "Generating sitemap..."
+          python3 -c "
+          import os
+          base_url = 'https://<username>.github.io/<repository-name>'
+          urls = []
+          for root, _, files in os.walk('.'):
+              for file in files:
+                  if file.endswith('.html'):
+                      urls.append(f'{base_url}/{file}')
+          with open('sitemap.xml', 'w') as f:
+              f.write('<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n')
+              f.write('<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\\n')
+              for url in urls:
+                  f.write(f'<url><loc>{url}</loc></url>\\n')
+              f.write('</urlset>\\n')
+          "
+      - name: Upload sitemap
+        run: mv sitemap.xml ./sitemap.xml
 
